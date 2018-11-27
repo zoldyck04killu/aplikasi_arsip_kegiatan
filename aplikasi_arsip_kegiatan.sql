@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2018 at 12:51 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Generation Time: Nov 27, 2018 at 01:13 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,6 +40,23 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', '$2y$10$wuaHrQc0u7PBNE2DuLL5MeuPJeLFM49OsIwZjNyE5T7tz40OjAgfK');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Dokumen`
+--
+
+CREATE TABLE `Dokumen` (
+  `dokumen_no` int(100) NOT NULL,
+  `dokumen_tgl` date NOT NULL,
+  `dokumen_kegiatan_no` int(100) NOT NULL,
+  `dokumen_gugatan_no` int(100) NOT NULL,
+  `dokumen_odner` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dokumen_id_jenis` int(100) NOT NULL,
+  `dokumen_status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dokumen_ket` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -130,6 +147,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `Dokumen`
+--
+ALTER TABLE `Dokumen`
+  ADD PRIMARY KEY (`dokumen_no`);
+
+--
 -- Indexes for table `Guru`
 --
 ALTER TABLE `Guru`
@@ -162,6 +185,12 @@ ALTER TABLE `Siswa`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `Dokumen`
+--
+ALTER TABLE `Dokumen`
+  MODIFY `dokumen_no` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Jenis`

@@ -24,6 +24,14 @@ elseif (@$_GET['view'] == 'logout-admin')
 elseif (@$_GET['view'] == 'register-guru') {
     include 'view/admin/registerUser/register-guru.php';
 }
+elseif (@$_GET['view'] == 'data-guru')
+{
+    include 'view/guru/data_guru.php';
+}
+elseif (@$_GET['view'] == 'data-siswa')
+{
+    include 'view/siswa/data_siswa.php';
+}
 elseif (@$_GET['view'] == 'register-siswa') {
     include 'view/admin/registerUser/register-siswa.php';
 }

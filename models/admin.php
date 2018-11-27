@@ -60,6 +60,20 @@ class Admin
         }
   }
 
+  public function showGuru(){
+    $db = $this->mysqli->conn;
+    $sql = "SELECT * FROM Guru";
+    $query = $db->query($sql);
+    return $query;
+  }
+
+  public function showSiswa(){
+    $db = $this->mysqli->conn;
+    $sql = "SELECT * FROM Siswa";
+    $query = $db->query($sql);
+    return $query;
+  }
+
   public function logout(){
     @$_SESSION['user'] == FALSE;
     unset($_SESSION);

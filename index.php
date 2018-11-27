@@ -52,8 +52,8 @@ $objAdmin = new Admin($obj);
                 Data
               </a>
               <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="">Data Guru</a>
-                <a class="dropdown-item" href="">Data Siswa</a>
+                <a class="dropdown-item" href="?view=data-guru">Data Guru</a>
+                <a class="dropdown-item" href="?view=data-siswa">Data Siswa</a>
                 <a class="dropdown-item" href="">Data Kegiatan</a>
                 <a class="dropdown-item" href="">Data Dokumen</a>
                 <a class="dropdown-item" href="?view=register-guru">Register Guru</a>
