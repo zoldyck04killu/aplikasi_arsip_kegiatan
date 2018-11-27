@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2018 at 05:26 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Generation Time: Nov 28, 2018 at 12:51 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,6 +25,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(10) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'admin', '$2y$10$wuaHrQc0u7PBNE2DuLL5MeuPJeLFM49OsIwZjNyE5T7tz40OjAgfK');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Guru`
 --
 
@@ -32,13 +51,20 @@ CREATE TABLE `Guru` (
   `guru_nip` int(50) NOT NULL,
   `guru_nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `guru_pekerjaan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `guru_jkel` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guru_jekel` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `guru_alamat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `guru_telp` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `guru_jabatan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `guru_golongan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `guru_password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Guru`
+--
+
+INSERT INTO `Guru` (`guru_nip`, `guru_nama`, `guru_pekerjaan`, `guru_jekel`, `guru_alamat`, `guru_telp`, `guru_jabatan`, `guru_golongan`, `guru_password`) VALUES
+(14041037, 'Muhammad Aldi Renaldy', 'Guru IT', 'Laki-Laki', 'Jalan Mahligai', '08565152751', 'GUru Staff', 'B', '$2y$10$DFkjhwRZjnLWYMckM3.M5.e9PG8D5F6/P3EW5AOg6O0.VHRVyOqQC');
 
 -- --------------------------------------------------------
 
@@ -79,7 +105,7 @@ CREATE TABLE `Kegiatan` (
 CREATE TABLE `Siswa` (
   `siswa_nis` int(100) NOT NULL,
   `siswa_nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `siswa_jkel` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `siswa_jekel` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `siswa_alamat` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `siswa_telp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `siswa_kelas` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -87,8 +113,21 @@ CREATE TABLE `Siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data for table `Siswa`
+--
+
+INSERT INTO `Siswa` (`siswa_nis`, `siswa_nama`, `siswa_jekel`, `siswa_alamat`, `siswa_telp`, `siswa_kelas`, `siswa_password`) VALUES
+(14041037, 'Muhammad Aldi Renaldy', 'Laki-Laki', 'Jalan Mahligai', '08565152751', '3', '$2y$10$cEBKxFncdaihT/fiFtTVROd7G6NCuESA3ohkswjLJX.0ouSqBvIZy');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Guru`
@@ -117,6 +156,12 @@ ALTER TABLE `Siswa`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Jenis`

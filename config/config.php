@@ -5,8 +5,8 @@ session_start();
 // rubah data di bawah ini sessuai phpmyadmin
 $host = 'localhost';
 $user = 'root';
-$pass = '4';
-$db   = 'aplikasi_perpustakaan';
+$pass = '';
+$db   = 'aplikasi_arsip_kegiatan';
 // end
 
 function base_url($url = null ) {

@@ -5,6 +5,7 @@ include('models/admin.php');
 $obj = new Connection($host, $user, $pass, $db);
 $objAdmin = new Admin($obj);
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -45,10 +46,7 @@ $objAdmin = new Admin($obj);
             <li class="nav-item">
               <a class="nav-link text-white" href="">Profile</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="">Admin</a>
-            </li>
-
+            <?php if (@$_SESSION['user'] == 'admin') { ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Data
@@ -58,9 +56,12 @@ $objAdmin = new Admin($obj);
                 <a class="dropdown-item" href="">Data Siswa</a>
                 <a class="dropdown-item" href="">Data Kegiatan</a>
                 <a class="dropdown-item" href="">Data Dokumen</a>
-                <a class="dropdown-item" href="">Data Register</a>
+                <a class="dropdown-item" href="?view=register-guru">Register Guru</a>
+                <a class="dropdown-item" href="?view=register-siswa">Register Siswa</a>
               </div>
             </li>
+          <?php } ?>
+            <?php if (!@$_SESSION['user']) { ?>
             <li class="nav-item">
                 <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
                 <a class="nav-link text-white" href="?view=login-admin">Login Siswa</a>
@@ -73,7 +74,12 @@ $objAdmin = new Admin($obj);
                 <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
                 <a class="nav-link text-white" href="?view=login-admin">Login Admin</a>
             </li>
-
+            <?php } ?>
+            <?php if (@$_SESSION['user']) { ?>
+              <li class="nav-item">
+                  <a class="nav-link text-white" href="?view=logout-admin">Logout</a>
+              </li>
+            <?php } ?>
           </ul>
         </div>
       </nav>
