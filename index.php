@@ -4,7 +4,6 @@ require_once 'config/connection.php';
 include('models/admin.php');
 $obj = new Connection($host, $user, $pass, $db);
 $objAdmin = new Admin($obj);
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -64,7 +63,15 @@ $objAdmin = new Admin($obj);
             </li>
             <li class="nav-item">
                 <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
-                <a class="nav-link text-white" href="?view=login-admin">Login</a>
+                <a class="nav-link text-white" href="?view=login-admin">Login Siswa</a>
+            </li>
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
+                <a class="nav-link text-white" href="?view=login-admin">Login Guru</a>
+            </li>
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
+                <a class="nav-link text-white" href="?view=login-admin">Login Admin</a>
             </li>
 
           </ul>
