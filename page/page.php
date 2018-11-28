@@ -21,12 +21,26 @@ elseif (@$_GET['view'] == 'logout-admin')
     window.location="?view=login-admin";
      </script>';
 }
+elseif (@$_GET['view'] == 'login-guru') {
+    include 'view/guru/login.php';
+}
+elseif (@$_GET['view'] == 'guru-home')
+{
+    include 'view/guru/guru_home.php';
+}
 elseif (@$_GET['view'] == 'register-guru') {
     include 'view/admin/registerUser/register-guru.php';
 }
 elseif (@$_GET['view'] == 'data-guru')
 {
     include 'view/guru/data_guru.php';
+}
+elseif (@$_GET['view'] == 'login-siswa') {
+    include 'view/siswa/login.php';
+}
+elseif (@$_GET['view'] == 'siswa-home')
+{
+    include 'view/siswa/siswa_home.php';
 }
 elseif (@$_GET['view'] == 'data-siswa')
 {

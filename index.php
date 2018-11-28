@@ -46,36 +46,41 @@ $objAdmin = new Admin($obj);
             <li class="nav-item">
               <a class="nav-link text-white" href="">Profile</a>
             </li>
-            <?php if (@$_SESSION['user'] == 'admin') { ?>
+            <?php if (@$_SESSION['user'] || $_SESSION['NIS'] || $_SESSION['NIP'] ) { ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Data
               </a>
               <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                <?php if (@$_SESSION['NIP']) { ?>
                 <a class="dropdown-item" href="?view=data-guru">Data Guru</a>
+              <?php }elseif (@$_SESSION['NIS']) { ?>
                 <a class="dropdown-item" href="?view=data-siswa">Data Siswa</a>
+                <?php } ?>
                 <a class="dropdown-item" href="">Data Kegiatan</a>
                 <a class="dropdown-item" href="">Data Dokumen</a>
+                <?php if (@$_SESSION['user']) { ?>
                 <a class="dropdown-item" href="?view=register-guru">Register Guru</a>
                 <a class="dropdown-item" href="?view=register-siswa">Register Siswa</a>
+                <?php } ?>
               </div>
             </li>
           <?php } ?>
-            <?php if (!@$_SESSION['user']) { ?>
+            <?php if (!$_SESSION['NIS'] && !$_SESSION['NIP'] && !$_SESSION['user']  ) { ?>
             <li class="nav-item">
                 <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
-                <a class="nav-link text-white" href="?view=login-admin">Login Siswa</a>
+                <a class="nav-link text-white" href="?view=login-siswa">Login Siswa</a>
             </li>
             <li class="nav-item">
                 <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
-                <a class="nav-link text-white" href="?view=login-admin">Login Guru</a>
+                <a class="nav-link text-white" href="?view=login-guru">Login Guru</a>
             </li>
             <li class="nav-item">
                 <!-- <a class="nav-link" href="?view=logout-admin">Log Out</a> -->
                 <a class="nav-link text-white" href="?view=login-admin">Login Admin</a>
             </li>
             <?php } ?>
-            <?php if (@$_SESSION['user']) { ?>
+            <?php if (@$_SESSION['user'] || $_SESSION['NIS'] || $_SESSION['NIP'] ) { ?>
               <li class="nav-item">
                   <a class="nav-link text-white" href="?view=logout-admin">Logout</a>
               </li>

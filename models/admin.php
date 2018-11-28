@@ -60,6 +60,40 @@ class Admin
         }
   }
 
+  public function loginSiswa($user, $pass){
+  $db = $this->mysqli->conn;
+  $userdata = $db->query("SELECT * FROM Siswa WHERE siswa_nis = '$user' ") or die ($db->error);
+  $cek = $userdata->num_rows;
+  $cek_2 = $userdata->fetch_array();
+  if ($cek > 0) {
+          if (password_verify($pass, $cek_2['siswa_password'])) {
+              $_SESSION['NIS'] = $cek_2['siswa_nis']; //session KTP
+              return true;
+          } else {
+              return false; // password salah
+          }
+        } else {
+          // code...
+        }
+  }
+
+  public function loginGuru($user, $pass){
+  $db = $this->mysqli->conn;
+  $userdata = $db->query("SELECT * FROM Guru WHERE guru_nip = '$user' ") or die ($db->error);
+  $cek = $userdata->num_rows;
+  $cek_2 = $userdata->fetch_array();
+  if ($cek > 0) {
+          if (password_verify($pass, $cek_2['guru_password'])) {
+              $_SESSION['NIP'] = $cek_2['guru_nip']; //session KTP
+              return true;
+          } else {
+              return false; // password salah
+          }
+        } else {
+          // code...
+        }
+  }
+
   public function showGuru(){
     $db = $this->mysqli->conn;
     $sql = "SELECT * FROM Guru";
