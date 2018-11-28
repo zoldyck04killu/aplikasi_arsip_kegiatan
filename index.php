@@ -52,11 +52,6 @@ $objAdmin = new Admin($obj);
                 Data
               </a>
               <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                <?php if (@$_SESSION['NIP']) { ?>
-                <a class="dropdown-item" href="?view=data-guru">Data Guru</a>
-              <?php }elseif (@$_SESSION['NIS'] ) { ?>
-                <a class="dropdown-item" href="?view=data-siswa">Data Siswa</a>
-                <?php } ?>
                 <a class="dropdown-item" href="?view=input-kegiatan">Data Kegiatan</a>
                 <a class="dropdown-item" href="?view=input-dokument">Data Dokumen</a>
                 <?php if (@$_SESSION['user']) { ?>
@@ -64,7 +59,6 @@ $objAdmin = new Admin($obj);
                 <a class="dropdown-item" href="?view=jenis-dokument">Input Jenis Dokument</a>
                 <a class="dropdown-item" href="?view=data-guru">Data Guru</a>
                 <a class="dropdown-item" href="?view=data-siswa">Data Siswa</a>
-
                 <?php } ?>
               </div>
             </li>
