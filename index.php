@@ -62,8 +62,9 @@ $objAdmin = new Admin($obj);
                 <?php if (@$_SESSION['user']) { ?>
                 <a class="dropdown-item" href="?view=jenis-kegiatan">Input Jenis Kegiatan</a>
                 <a class="dropdown-item" href="?view=jenis-dokument">Input Jenis Dokument</a>
-                <a class="dropdown-item" href="?view=register-guru">Register Guru</a>
-                <a class="dropdown-item" href="?view=register-siswa">Register Siswa</a>
+                <a class="dropdown-item" href="?view=data-guru">Data Guru</a>
+                <a class="dropdown-item" href="?view=data-siswa">Data Siswa</a>
+
                 <?php } ?>
               </div>
             </li>

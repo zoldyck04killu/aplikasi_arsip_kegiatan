@@ -4,6 +4,9 @@
     } );
 </script>
 
+<?php if (@$_SESSION['user']) { ?>
+<a class="dropdown-item" href="?view=register-siswa">Register Siswa</a>
+<?php } ?>
 
 <div class="header-hal">
     <h1>DATA SISWA</h1>

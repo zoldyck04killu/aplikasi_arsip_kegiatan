@@ -4,6 +4,9 @@
     } );
 </script>
 
+<?php if (@$_SESSION['user']) { ?>
+<a class="dropdown-item" href="?view=register-guru">Register Guru</a>
+<?php } ?>
 
 <div class="header-hal">
     <h1>DATA GURU</h1>
