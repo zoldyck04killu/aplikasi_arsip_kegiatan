@@ -74,8 +74,14 @@ elseif (@$_GET['view'] == 'siswa-hapus') {
 elseif (@$_GET['view'] == 'input-kegiatan') {
     include 'view/input-kegiatan.php';
 }
+elseif (@$_GET['view'] == 'input-dokument') {
+    include 'view/input-dokument.php';
+}
 elseif (@$_GET['view'] == 'jenis-kegiatan') {
     include 'view/admin/kegiatan/input-jenis-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'jenis-dokument') {
+    include 'view/admin/dokument/input-jenis-dokument.php';
 }
 
 

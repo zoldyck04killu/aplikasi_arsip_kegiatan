@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2018 at 04:16 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Generation Time: Nov 28, 2018 at 01:45 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,6 +40,51 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin', '$2y$10$wuaHrQc0u7PBNE2DuLL5MeuPJeLFM49OsIwZjNyE5T7tz40OjAgfK');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Document`
+--
+
+CREATE TABLE `Document` (
+  `dokument_id` int(100) NOT NULL,
+  `dokument_tgl` date NOT NULL,
+  `dokument_no_perkara` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dokument_no_gugatan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dokument_odner` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dokument_id_jenis` int(100) NOT NULL,
+  `dokument_status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dokument_ket` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Document`
+--
+
+INSERT INTO `Document` (`dokument_id`, `dokument_tgl`, `dokument_no_perkara`, `dokument_no_gugatan`, `dokument_odner`, `dokument_id_jenis`, `dokument_status`, `dokument_ket`) VALUES
+(5, '2018-11-13', '654', '65465', '6546', 1, '1', 'hvgh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Dokument_jenis`
+--
+
+CREATE TABLE `Dokument_jenis` (
+  `dokument_jenis_id` int(100) NOT NULL,
+  `dokument_jenis_nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Dokument_jenis`
+--
+
+INSERT INTO `Dokument_jenis` (`dokument_jenis_id`, `dokument_jenis_nama`) VALUES
+(1, 'Dokument A'),
+(2, 'Dokument B'),
+(3, 'Dokument C'),
+(4, 'Dokument D');
 
 -- --------------------------------------------------------
 
@@ -148,6 +193,18 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `Document`
+--
+ALTER TABLE `Document`
+  ADD PRIMARY KEY (`dokument_id`);
+
+--
+-- Indexes for table `Dokument_jenis`
+--
+ALTER TABLE `Dokument_jenis`
+  ADD PRIMARY KEY (`dokument_jenis_id`);
+
+--
 -- Indexes for table `Guru`
 --
 ALTER TABLE `Guru`
@@ -181,6 +238,18 @@ ALTER TABLE `Siswa`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `Document`
+--
+ALTER TABLE `Document`
+  MODIFY `dokument_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `Dokument_jenis`
+--
+ALTER TABLE `Dokument_jenis`
+  MODIFY `dokument_jenis_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `Jenis`

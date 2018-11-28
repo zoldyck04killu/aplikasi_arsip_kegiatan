@@ -171,16 +171,38 @@ class Admin
     return $query;
   }
 
+  public function jenisDokument()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Dokument_jenis ") or die ($db->error);
+    return $query;
+  }
+
   public function saveKegiatan($no, $tgl, $keg, $nip, $keg_nama, $alamat, $nis, $status, $ket)
   {
     $db = $this->mysqli->conn;
     $db->query("INSERT INTO Kegiatan VALUES ('$no', '$tgl', '$keg', '$nip', '$keg_nama', '$alamat', '$nis', '$status', '$ket')") or die ($db->error);
   }
 
+  public function saveDocument($tgl, $perkara, $gugatan, $odner, $jenis, $status, $ket)
+  {
+    $db = $this->mysqli->conn;
+    // die($tgl);
+    $db->query("INSERT INTO Document (dokument_tgl, dokument_no_perkara, dokument_no_gugatan, dokument_odner, dokument_id_jenis, dokument_status, dokument_ket)
+    VALUES ('$tgl', '$perkara', '$gugatan', '$odner', '$jenis', '$status', '$ket')") or die ($db->error);
+  }
+
   public function saveJenis($nama, $ket)
   {
     $db = $this->mysqli->conn;
     $db->query("INSERT INTO Jenis VALUES ('', '$nama', '$ket')") or die ($db->error);
+  }
+
+
+  public function saveJenisDokument($nama)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("INSERT INTO Dokument_jenis (dokument_jenis_nama) VALUES ('$nama')") or die ($db->error);
   }
 
 
