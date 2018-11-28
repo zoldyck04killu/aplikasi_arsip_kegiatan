@@ -67,6 +67,56 @@ class Admin
     return $query;
   }
 
+  public function editGuru($id)
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Guru WHERE guru_nip = '$id' ") or die ($db->error);
+    return $query;
+  }
+
+  public function updateGuru($nip, $nama, $pekerjaan, $jekel, $alamat, $telp, $jabatan, $golongan)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Guru SET guru_nama = '$nama', guru_pekerjaan = '$pekerjaan', guru_jekel = '$jekel', guru_alamat = '$alamat', guru_telp = '$telp', guru_jabatan = '$jabatan', guru_golongan = '$golongan' WHERE guru_nip = '$nip' ") or die ($db->error);
+  }
+
+  public function resetPassGuru($nip, $pass_hash)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Guru SET guru_password = '$pass_hash' WHERE guru_nip = '$nip' ") or die ($db->error);
+  }
+
+  public function deleteGuru($id)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("DELETE FROM Guru WHERE guru_nip = '$id' ") or die ($db->error);
+  }
+
+  public function editSiswa($id)
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Siswa WHERE siswa_nis = '$id' ") or die ($db->error);
+    return $query;
+  }
+
+  public function updateSiswa($nis, $nama, $jekel, $alamat, $telpon, $kelas)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Siswa SET siswa_nama = '$nama', siswa_jekel = '$jekel', siswa_alamat = '$alamat', siswa_telp = '$telpon', siswa_kelas = '$kelas' ") or die ($db->error);
+  }
+
+  public function deleteSiswa($id)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("DELETE FROM Siswa WHERE siswa_nis = '$id' ") or die ($db->error);
+  }
+
+  public function resetPassSiswa($nis, $pass_hash)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Siswa SET siswa_password = '$pass_hash' WHERE siswa_nis = '$nis' ") or die ($db->error);
+  }
+
   public function showSiswa(){
     $db = $this->mysqli->conn;
     $sql = "SELECT * FROM Siswa";

@@ -35,6 +35,30 @@ elseif (@$_GET['view'] == 'data-siswa')
 elseif (@$_GET['view'] == 'register-siswa') {
     include 'view/admin/registerUser/register-siswa.php';
 }
+elseif (@$_GET['view'] == 'guru-edit') {
+    include 'view/guru/data_edit.php';
+}
+elseif (@$_GET['view'] == 'guru-reset') {
+    include 'view/guru/reset_password.php';
+}
+elseif (@$_GET['view'] == 'siswa-edit') {
+    include 'view/siswa/data_edit.php';
+}
+elseif (@$_GET['view'] == 'siswa-reset') {
+    include 'view/siswa/reset_password.php';
+}
+elseif (@$_GET['view'] == 'guru-hapus') {
+    $id = $_GET['id'];
+    $objAdmin->deleteGuru($id);
+    echo '<script> window.location="?view=data-guru"; </script>';
+}
+elseif (@$_GET['view'] == 'siswa-hapus') {
+    $id = $_GET['id'];
+    $objAdmin->deleteSiswa($id);
+    echo '<script> window.location="?view=data-guru"; </script>';
+}
+
+
 
 
 else

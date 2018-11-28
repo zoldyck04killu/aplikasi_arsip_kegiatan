@@ -37,8 +37,11 @@
         <td><?= $a->siswa_telp; ?></td>
         <td><?= $a->siswa_kelas; ?></td>
         <td>
+          <div class="btn-group">
           <a href="?view=siswa-edit&id=<?= $a->siswa_nis; ?>" class="btn btn-sm btn-warning">Edit</a>
-          <a href="?view=siswa-hapuss&id=<?= $a->siswa_nis; ?>" class="btn btn-sm btn-danger">Hapus</a>
+          <a href="?view=siswa-reset&id=<?= $a->siswa_nis; ?>" class="btn btn-sm btn-info">Reset password</a>
+          <a href="?view=siswa-hapus&id=<?= $a->siswa_nis; ?>" class="btn btn-sm btn-danger">Hapus</a>
+          </div>
         </td>
       </tr>
       <?php
