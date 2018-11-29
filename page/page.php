@@ -71,6 +71,12 @@ elseif (@$_GET['view'] == 'siswa-hapus') {
     $objAdmin->deleteSiswa($id);
     echo '<script> window.location="?view=data-guru"; </script>';
 }
+elseif (@$_GET['view'] == 'input-kegiatan') {
+    include 'view/input-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'jenis-kegiatan') {
+    include 'view/admin/kegiatan/input-jenis-kegiatan.php';
+}
 
 
 

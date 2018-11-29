@@ -164,6 +164,25 @@ class Admin
     session_destroy();
   }
 
+  public function jenis()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Jenis ") or die ($db->error);
+    return $query;
+  }
+
+  public function saveKegiatan($no, $tgl, $keg, $nip, $keg_nama, $alamat, $nis, $status, $ket)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("INSERT INTO Kegiatan VALUES ('$no', '$tgl', '$keg', '$nip', '$keg_nama', '$alamat', '$nis', '$status', '$ket')") or die ($db->error);
+  }
+
+  public function saveJenis($nama, $ket)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("INSERT INTO Jenis VALUES ('', '$nama', '$ket')") or die ($db->error);
+  }
+
 
 
 } // end class

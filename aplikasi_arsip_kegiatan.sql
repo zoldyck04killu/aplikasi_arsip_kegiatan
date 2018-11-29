@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2018 at 01:13 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Generation Time: Nov 29, 2018 at 04:16 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,23 +44,6 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Dokumen`
---
-
-CREATE TABLE `Dokumen` (
-  `dokumen_no` int(100) NOT NULL,
-  `dokumen_tgl` date NOT NULL,
-  `dokumen_kegiatan_no` int(100) NOT NULL,
-  `dokumen_gugatan_no` int(100) NOT NULL,
-  `dokumen_odner` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dokumen_id_jenis` int(100) NOT NULL,
-  `dokumen_status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dokumen_ket` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Guru`
 --
 
@@ -81,7 +64,7 @@ CREATE TABLE `Guru` (
 --
 
 INSERT INTO `Guru` (`guru_nip`, `guru_nama`, `guru_pekerjaan`, `guru_jekel`, `guru_alamat`, `guru_telp`, `guru_jabatan`, `guru_golongan`, `guru_password`) VALUES
-(14041037, 'Muhammad Aldi Renaldy', 'Guru IT', 'Laki-Laki', 'Jalan Mahligai', '08565152751', 'GUru Staff', 'B', '$2y$10$DFkjhwRZjnLWYMckM3.M5.e9PG8D5F6/P3EW5AOg6O0.VHRVyOqQC');
+(14041037, 'aldi', 'IT', 'Laki-Laki', 'jalan mahligai', '0856', 'Staff', 'B', '$2y$10$bDCRWPa9yaGPtVaAZq0WmesvkSE5IJzCsUX6JqerhWCX.VHedEPjO');
 
 -- --------------------------------------------------------
 
@@ -94,6 +77,16 @@ CREATE TABLE `Jenis` (
   `jenis_nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis_keterangan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Jenis`
+--
+
+INSERT INTO `Jenis` (`jenis_id`, `jenis_nama`, `jenis_keterangan`) VALUES
+(1, 'Kegiatan A', ''),
+(2, 'Kegiatan B', ''),
+(3, 'Kegiatan C', ''),
+(4, 'Kegiatan D', 'ok');
 
 -- --------------------------------------------------------
 
@@ -112,6 +105,14 @@ CREATE TABLE `Kegiatan` (
   `kegiatan_status` int(100) NOT NULL,
   `kegiatan_keterangan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Kegiatan`
+--
+
+INSERT INTO `Kegiatan` (`kegiatan_nomor`, `kegiatan_tanggal`, `kegiatan_id_jenis`, `kegiatan_nip`, `kegiatan_nama`, `kegiatan_alamat`, `kegiatan_nis`, `kegiatan_status`, `kegiatan_keterangan`) VALUES
+(1, '2018-07-23', 1, 0, 'menyampu', 'jalan alamat oke', 14041037, 1, 'siswa menyapu'),
+(2, '2018-08-23', 2, 14041037, 'validasi guru', 'jalan guru', 0, 0, 'memvalidasi guru');
 
 -- --------------------------------------------------------
 
@@ -134,7 +135,7 @@ CREATE TABLE `Siswa` (
 --
 
 INSERT INTO `Siswa` (`siswa_nis`, `siswa_nama`, `siswa_jekel`, `siswa_alamat`, `siswa_telp`, `siswa_kelas`, `siswa_password`) VALUES
-(14041037, 'Muhammad Aldi Renaldy', 'Laki-Laki', 'Jalan Mahligai', '08565152751', '3', '$2y$10$cEBKxFncdaihT/fiFtTVROd7G6NCuESA3ohkswjLJX.0ouSqBvIZy');
+(14041037, 'aldi siswa', 'Laki-Laki', 'jalan mahligai', '08', '7', '$2y$10$PxYl.qDu.VXDcrgYR3gYiewlNBRSGE/45F4YMHg61dtY40DhPD/H2');
 
 --
 -- Indexes for dumped tables
@@ -145,12 +146,6 @@ INSERT INTO `Siswa` (`siswa_nis`, `siswa_nama`, `siswa_jekel`, `siswa_alamat`, `
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `Dokumen`
---
-ALTER TABLE `Dokumen`
-  ADD PRIMARY KEY (`dokumen_no`);
 
 --
 -- Indexes for table `Guru`
@@ -168,7 +163,8 @@ ALTER TABLE `Jenis`
 -- Indexes for table `Kegiatan`
 --
 ALTER TABLE `Kegiatan`
-  ADD PRIMARY KEY (`kegiatan_nomor`);
+  ADD PRIMARY KEY (`kegiatan_nomor`),
+  ADD KEY `kegiatan_id_jenis` (`kegiatan_id_jenis`);
 
 --
 -- Indexes for table `Siswa`
@@ -187,22 +183,26 @@ ALTER TABLE `admin`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `Dokumen`
---
-ALTER TABLE `Dokumen`
-  MODIFY `dokumen_no` int(100) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `Jenis`
 --
 ALTER TABLE `Jenis`
-  MODIFY `jenis_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `jenis_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `Kegiatan`
 --
 ALTER TABLE `Kegiatan`
-  MODIFY `kegiatan_nomor` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `kegiatan_nomor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Kegiatan`
+--
+ALTER TABLE `Kegiatan`
+  ADD CONSTRAINT `Kegiatan_ibfk_1` FOREIGN KEY (`kegiatan_id_jenis`) REFERENCES `Jenis` (`jenis_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
