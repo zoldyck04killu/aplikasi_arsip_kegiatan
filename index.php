@@ -52,11 +52,19 @@ $objAdmin = new Admin($obj);
                 Data
               </a>
               <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="?view=input-kegiatan">Data Kegiatan</a>
-                <a class="dropdown-item" href="?view=input-dokument">Data Dokumen</a>
+              <?php if (@$_SESSION['NIP']) { ?>
+                <a class="dropdown-item" href="?view=kegiatan-guru">Data Kegiatan</a>
+              <?php } ?>
+              <?php if (@$_SESSION['user']) { ?>
+                <a class="dropdown-item" href="?view=data-kegiatan">Data Kegiatan</a>
+              <?php } ?>
+              <?php if (@$_SESSION['NIS']) { ?>
+                <a class="dropdown-item" href="?view=kegiatan-siswa">Data Kegiatan</a>
+              <?php } ?>
+                <a class="dropdown-item" href="?view=data-dokument">Data Dokumen</a>
                 <?php if (@$_SESSION['user']) { ?>
-                <a class="dropdown-item" href="?view=jenis-kegiatan">Input Jenis Kegiatan</a>
-                <a class="dropdown-item" href="?view=jenis-dokument">Input Jenis Dokument</a>
+                <a class="dropdown-item" href="?view=jenis-kegiatan">Jenis Kegiatan</a>
+                <a class="dropdown-item" href="?view=jenis-dokument">Jenis Dokument</a>
                 <a class="dropdown-item" href="?view=data-guru">Data Guru</a>
                 <a class="dropdown-item" href="?view=data-siswa">Data Siswa</a>
                 <?php } ?>

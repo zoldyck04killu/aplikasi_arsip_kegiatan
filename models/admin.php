@@ -206,6 +206,56 @@ class Admin
   }
 
 
+  public function showKegiatan()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT Jenis.jenis_id, Jenis.jenis_nama, Kegiatan.kegiatan_nomor, Kegiatan.kegiatan_tanggal, Kegiatan.kegiatan_id_jenis, Kegiatan.kegiatan_nip, Kegiatan.kegiatan_nama, Kegiatan.kegiatan_alamat, Kegiatan.kegiatan_nis, Kegiatan.kegiatan_status, Kegiatan.kegiatan_keterangan
+      FROM Jenis
+      INNER JOIN Kegiatan
+      ON Jenis.jenis_id = Kegiatan.kegiatan_id_jenis  ") or die ($db->error);
+    return $query;
+  }
+
+  public function showKegiatanGuru()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT Jenis.jenis_id, Jenis.jenis_nama, Kegiatan.kegiatan_nomor, Kegiatan.kegiatan_tanggal, Kegiatan.kegiatan_id_jenis, Kegiatan.kegiatan_nip, Kegiatan.kegiatan_nama, Kegiatan.kegiatan_alamat, Kegiatan.kegiatan_nis, Kegiatan.kegiatan_status, Kegiatan.kegiatan_keterangan
+      FROM Jenis
+      INNER JOIN Kegiatan
+      ON Jenis.jenis_id = Kegiatan.kegiatan_id_jenis
+      WHERE kegiatan_nip  ") or die ($db->error);
+    return $query;
+  }
+
+  public function showKegiatanSiswa()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT Jenis.jenis_id, Jenis.jenis_nama, Kegiatan.kegiatan_nomor, Kegiatan.kegiatan_tanggal, Kegiatan.kegiatan_id_jenis, Kegiatan.kegiatan_nip, Kegiatan.kegiatan_nama, Kegiatan.kegiatan_alamat, Kegiatan.kegiatan_nis, Kegiatan.kegiatan_status, Kegiatan.kegiatan_keterangan
+      FROM Jenis
+      INNER JOIN Kegiatan
+      ON Jenis.jenis_id = Kegiatan.kegiatan_id_jenis
+      WHERE kegiatan_nis  ") or die ($db->error);
+    return $query;
+  }
+
+  public function jenisKegiatan()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Jenis ");
+    return $query;
+  }
+
+  public function ShowDokument()
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT Dokument_jenis.dokument_jenis_id, Dokument_jenis.dokument_jenis_nama, Document.dokument_id, Document.dokument_tgl, Document.dokument_no_perkara, Document.dokument_no_gugatan, Document.dokument_odner, Document.dokument_id_jenis, Document.dokument_status, Document.dokument_ket
+      FROM Dokument_jenis
+      INNER JOIN Document
+      ON Dokument_jenis.dokument_jenis_id = Document.dokument_id_jenis
+    ") or die ($db->errir);
+    return $query;
+  }
+
 
 } // end class
 

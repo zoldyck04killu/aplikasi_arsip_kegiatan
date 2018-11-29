@@ -77,13 +77,30 @@ elseif (@$_GET['view'] == 'input-kegiatan') {
 elseif (@$_GET['view'] == 'input-dokument') {
     include 'view/input-dokument.php';
 }
-elseif (@$_GET['view'] == 'jenis-kegiatan') {
+elseif (@$_GET['view'] == 'input-jenis-kegiatan') {
     include 'view/admin/kegiatan/input-jenis-kegiatan.php';
 }
-elseif (@$_GET['view'] == 'jenis-dokument') {
+elseif (@$_GET['view'] == 'input-jenis-dokument') {
     include 'view/admin/dokument/input-jenis-dokument.php';
 }
-
+elseif (@$_GET['view'] == 'data-kegiatan') {
+    include 'view/admin/kegiatan/data.php';
+}
+elseif (@$_GET['view'] == 'kegiatan-guru') {
+    include 'view/guru/data-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'kegiatan-siswa') {
+    include 'view/siswa/data-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'jenis-kegiatan') {
+    include 'view/admin/kegiatan/jenis-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'jenis-dokument') {
+    include 'view/admin/dokument/data.php';
+}
+elseif (@$_GET['view'] == 'data-dokument') {
+    include 'view/admin/dokument/data-dokument.php';
+}
 
 
 
