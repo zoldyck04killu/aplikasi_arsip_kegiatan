@@ -94,7 +94,10 @@ $objAdmin = new Admin($obj);
         </div>
       </nav>
 
+
+  <div class="contentArsip">
     <?php include('page/page.php'); ?>
+  </div>
 
   </body>
 
