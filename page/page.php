@@ -101,6 +101,9 @@ elseif (@$_GET['view'] == 'jenis-dokument') {
 elseif (@$_GET['view'] == 'data-dokument') {
     include 'view/admin/dokument/data-dokument.php';
 }
+elseif (@$_GET['view'] == 'cetak-kegiatan') {
+    include 'view/admin/kegiatan/cetak.php';
+}
 
 
 
