@@ -26,7 +26,7 @@ $objAdmin = new Admin($obj);
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-white">
       <a class="navbar-brand ">
-        <img class="nameHeader" src="<?= base_url()?>assets/image/image.jpg" width="60" height="60" class="d-inline-block align-top " alt="">
+        <img class="nameHeader" src="<?= base_url()?>assets/image/logo.jpeg" width="60" height="60" class="d-inline-block align-top " alt="">
         <div class="nameHeader" style="text-align: center;width: 1200px; ">
             <h2>
               MTS Sultan Suriansyah Banjarmasin
