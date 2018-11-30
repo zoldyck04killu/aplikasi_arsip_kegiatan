@@ -43,9 +43,9 @@ $objAdmin = new Admin($obj);
             <li class="nav-item active">
               <a class="nav-link text-white" href="?view=home">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link text-white" href="">Profile</a>
-            </li>
+            </li> -->
             <?php if (@$_SESSION['user'] || @$_SESSION['NIS'] || @$_SESSION['NIP'] ) { ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

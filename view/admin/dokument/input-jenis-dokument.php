@@ -1,12 +1,19 @@
-<form class="" action="" method="post">
+<center>
+<div class="form-input-document">
+    <form class="" action="" method="post">
 
-  <input type="text" name="jenis_nama" value="" placeholder="Masukan nama jenis dokument"> <br>
-  <input type="submit" name="simpan" value="Simpan">
+      <div class="form-group">
+        <input type="text" name="jenis_nama" class="form-control" placeholder="Masukan nama jenis dokument">
+      </div>
 
-</form>
+      <button type="submit" name="simpanJenisDocument"  class="btn btn-secondary btn-lg btn-block">Simpan</button>
+
+    </form>
+</div>
+</center>
 
 <?php
-if (isset($_POST['simpan'])) {
+if (isset($_POST['simpanJenisDocument'])) {
     $nama = $_POST['jenis_nama'];
     $objAdmin->saveJenisDokument($nama);
     echo '<script> alert("berhasil"); </script>';

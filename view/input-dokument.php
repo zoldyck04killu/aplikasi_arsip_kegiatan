@@ -7,35 +7,54 @@
 <h3 class="text-muted text-center">INPUT DOKUMENT GURU</h3>
 <?php } ?>
 
+<center>
+<div class="form-input-document">
+  <form class="" action="" method="POST">
 
+  <div class="form-group">
+    <input class="form-control" name="dokument_tanggal" type="date" id="example-date-input">
+  </div>
 
-<form class="" action="" method="POST">
+  <div class="form-group">
+    <input type="text" name="dokument_no_perkara" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No Perkara Dokument">
+  </div>
 
-<!-- <input type="number" name="kegiatan_nomor" value="" placeholder="NO Kegiatan"> <br> -->
-<input type="date" name="dokument_tanggal"> <br>
-<input type="text" name="dokument_no_perkara" value="" placeholder="No Perkara Dokument"> <br>
-<input type="text" name="dokument_no_gugatan" value="" placeholder="No Gugatan Dokument"> <br>
-<input type="text" name="dokument_odner" value="" placeholder="Odner Dokument"> <br>
+  <div class="form-group">
+    <input type="text" name="dokument_no_gugatan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No Gugatan Dokument">
+  </div>
 
-<select class="" name="document_id_jenis">
+  <div class="form-group">
+    <input type="text" name="dokument_odner" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Odner Dokument">
+  </div>
+
+  <div class="form-group">
+      <select class="form-control" id="exampleFormControlSelect1" name="document_id_jenis">
+        <?php
+        $data = $objAdmin->jenisDokument();
+        while ($a = $data->fetch_object()) { ?>
+        <option value="<?=$a->dokument_jenis_id; ?>"><?=$a->dokument_jenis_nama; ?></option>
+        <?php } ?>
+      </select>
+  </div>
+
+  <div class="form-group">
+      <select class="form-control" id="exampleFormControlSelect1" name="dokument_status">
+        <option value="1">AKTIF</option>
+        <option value="0">TIDAK AKTIF</option>
+      </select>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="dokumdokument_keteranganent_odner" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Keterangan Dokument">
+  </div>
+
+  <button type="submit" name="simpanKegiatan"  class="btn btn-secondary btn-lg btn-block">Simpan</button>
+  </form>
+</div>
+</center>
+
 <?php
-$data = $objAdmin->jenisDokument();
-while ($a = $data->fetch_object()) { ?>
-<option value="<?=$a->dokument_jenis_id; ?>"><?=$a->dokument_jenis_nama; ?></option>
-<?php } ?>
-</select> <br>
-
-<select class="" name="dokument_status">
-  <option value="1">AKTIF</option>
-  <option value="0">TIDAK AKTIF</option>
-</select> <br>
-<input type="text" name="dokument_keterangan" value="" placeholder="Keterangan Dokument"> <br>
-<input type="submit" name="simpan" value="Simpan">
-
-</form>
-
-<?php
-if (isset($_POST['simpan'])) {
+if (isset($_POST['simpanKegiatan'])) {
 
 
   // $no = $_POST['kegiatan_nomor'];

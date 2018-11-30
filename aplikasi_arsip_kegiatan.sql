@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2018 at 01:45 PM
+-- Generation Time: Nov 30, 2018 at 08:26 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -63,7 +63,8 @@ CREATE TABLE `Document` (
 --
 
 INSERT INTO `Document` (`dokument_id`, `dokument_tgl`, `dokument_no_perkara`, `dokument_no_gugatan`, `dokument_odner`, `dokument_id_jenis`, `dokument_status`, `dokument_ket`) VALUES
-(5, '2018-11-13', '654', '65465', '6546', 1, '1', 'hvgh');
+(5, '2018-11-13', '654', '65465', '6546', 1, '1', 'hvgh'),
+(6, '2018-11-13', '27351', '654', '564', 2, '0', '');
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,8 @@ CREATE TABLE `Kegiatan` (
 
 INSERT INTO `Kegiatan` (`kegiatan_nomor`, `kegiatan_tanggal`, `kegiatan_id_jenis`, `kegiatan_nip`, `kegiatan_nama`, `kegiatan_alamat`, `kegiatan_nis`, `kegiatan_status`, `kegiatan_keterangan`) VALUES
 (1, '2018-07-23', 1, 0, 'menyampu', 'jalan alamat oke', 14041037, 1, 'siswa menyapu'),
-(2, '2018-08-23', 2, 14041037, 'validasi guru', 'jalan guru', 0, 0, 'memvalidasi guru');
+(2, '2018-08-23', 2, 14041037, 'validasi guru', 'jalan guru', 0, 0, 'memvalidasi guru'),
+(12, '2018-11-08', 1, 14041037, 'tesas', 'jlnasjagds', 0, 1, 'ygssjedcvwvd dwhevdw');
 
 -- --------------------------------------------------------
 
@@ -243,7 +245,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `Document`
 --
 ALTER TABLE `Document`
-  MODIFY `dokument_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `dokument_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `Dokument_jenis`
@@ -261,7 +263,7 @@ ALTER TABLE `Jenis`
 -- AUTO_INCREMENT for table `Kegiatan`
 --
 ALTER TABLE `Kegiatan`
-  MODIFY `kegiatan_nomor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `kegiatan_nomor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

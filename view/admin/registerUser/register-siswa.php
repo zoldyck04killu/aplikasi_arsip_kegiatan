@@ -1,22 +1,50 @@
-<form class="" action="" method="post">
+<center>
+<div class="form-input-document">
+    <form class="" action="" method="post">
 
-  <input type="number" name="siswa_nis" value="" placeholder="NIS"> <br>
-  <input type="text" name="siswa_nama" value="" placeholder="Nama Siswa"> <br>
-  <select class="" name="siswa_jekel">
-    <option value="Laki-Laki">Laki-Laki</option>
-    <option value="Perempuan">Perempuan</option>
-  </select>
-  <input type="text" name="siswa_alamat" value="" placeholder="Alamat"> <br>
-  <input type="number" name="siswa_telp" value="" placeholder="Telpon"> <br>
-  <input type="number" name="siswa_kelas" value="" placeholder="Kelas"> <br>
-  <input type="password" name="siswa_password" value="" placeholder="Passowrd"> <br>
-  <input type="password" name="siswa_password2" value="" placeholder="Confirm Passowrd"> <br>
-  <input type="submit" name="register" value="register">
+      <div class="form-group">
+        <input type="text" name="siswa_nis" class="form-control" placeholder="NIS">
+      </div>
 
-</form>
+      <div class="form-group">
+        <input type="text" name="siswa_nama" class="form-control" placeholder="Nama Siswa">
+      </div>
+
+      <div class="form-group" >
+          <select class="form-control" id="exampleFormControlSelect1" name="siswa_jekel">
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="siswa_alamat" class="form-control" placeholder="Alamat">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="siswa_telp" class="form-control" placeholder="Telpon">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="siswa_kelas" class="form-control" placeholder="Kelas">
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="siswa_password" class="form-control" placeholder="Password"> <br>
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="siswa_password2" class="form-control" placeholder="Confirm Passowrd">
+      </div>
+
+      <button type="submit" name="registerSiswa"  class="btn btn-secondary btn-lg btn-block">Register</button>
+
+    </form>
+</div>
+</center>
 
 <?php
-if (isset($_POST['register'])) {
+if (isset($_POST['registerSiswa'])) {
     $nis = $_POST['siswa_nis'];
     $nama = $_POST['siswa_nama'];
     $jekel = $_POST['siswa_jekel'];

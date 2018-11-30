@@ -1,4 +1,6 @@
-<a href="?view=input-kegiatan">Tambah Kegiatan</a>
+<a href="?view=input-kegiatan">
+  <button type="button" class="btn btn-outline-dark">Tambah Kegiatan</button>
+</a>
 <table class="table table-striped">
   <thead>
     <tr>

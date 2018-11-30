@@ -1,4 +1,6 @@
-<a href="?view=input-dokument">Tambah</a>
+<!-- <a href="?view=input-dokument">
+  <button type="button" class="btn btn-outline-dark">Tambah Dokument</button>
+</a> -->
 <table class="table table-border">
   <thead>
     <tr>

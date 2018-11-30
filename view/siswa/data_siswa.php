@@ -5,7 +5,9 @@
 </script>
 
 <?php if (@$_SESSION['user']) { ?>
-<a class="dropdown-item" href="?view=register-siswa">Register Siswa</a>
+<a href="?view=register-siswa">
+  <button type="button" class="btn btn-outline-dark">Register Siswa</button>
+</a>
 <?php } ?>
 
 <div class="header-hal">

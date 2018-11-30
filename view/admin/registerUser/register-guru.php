@@ -1,23 +1,58 @@
-<form class="" action="" method="post">
+<center>
+<div class="form-input-document">
+    <form class="" action="" method="post">
 
-<input type="number" name="guru_nip" value="" placeholder="NIP"> <br>
-<input type="text" name="guru_nama" value="" placeholder="Nama Guru"> <br>
-<input type="text" name="guru_pekerjaan" value="" placeholder="Pekerjaan"> <br>
-<select class="" name="guru_jekel">
-    <option value="Laki-Laki">Laki-Laki</option>
-    <option value="Perempuan">Perempuan</option>
-</select> <br>
-<input type="text" name="guru_alamat" value="" placeholder="Alamat"> <br>
-<input type="number" name="guru_telp" value="" placeholder="Telpon"> <br>
-<input type="text" name="guru_jabatan" value="" placeholder="Jabatan"> <br>
-<input type="text" name="guru_golongan" value="" placeholder="Golongan"> <br>
-<input type="password" name="guru_password" value="" placeholder="Passowrd"> <br>
-<input type="password" name="guru_password2" value="" placeholder="Confirm Passowrd"> <br>
-<input type="submit" name="register" value="register">
-</form>
+      <div class="form-group">
+        <input type="text" name="guru_nip" class="form-control" placeholder="NIP">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="guru_nama" class="form-control" placeholder="Nama Guru">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="guru_pekerjaan" class="form-control" placeholder="Pekerjaan">
+      </div>
+
+      <div class="form-group">
+          <select class="form-control" id="exampleFormControlSelect1" name="guru_jekel">
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="guru_alamat" class="form-control" placeholder="Alamat">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="guru_telp" class="form-control" placeholder="Telpon">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="guru_jabatan" class="form-control" placeholder="Jabatan">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="guru_golongan" class="form-control" placeholder="Golongan">
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="guru_password" class="form-control" placeholder="Passowrd">
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="guru_password2" class="form-control" placeholder="Confirm Passowrd">
+      </div>
+
+      <button type="submit" name="registerGuru"  class="btn btn-secondary btn-lg btn-block">Register</button>
+
+    </form>
+</div>
+</center>
 
 <?php
-if (isset($_POST['register'])) {
+if (isset($_POST['registerGuru'])) {
     $nip = $_POST['guru_nip'];
     $nama = $_POST['guru_nama'];
     $pekerjaan = $_POST['guru_pekerjaan'];
