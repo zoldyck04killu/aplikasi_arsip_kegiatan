@@ -258,6 +258,45 @@ class Admin
     return $query;
   }
 
+  public function edit_jenisKegiatan($id)
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Jenis WHERE jenis_id = '$id' ") or die ($db->error);
+    return $query;
+  }
+
+  public function update_jenisKegiatan($id, $nama, $ket)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Jenis SET jenis_nama = '$nama', jenis_keterangan = '$ket' WHERE jenis_id = '$id' ") or die ($db->error);
+  }
+
+  public function deleteJenisKegiatan($id)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("DELETE FROM Jenis WHERE jenis_id = '$id' ") or die ($db->error);
+  }
+
+  public function edit_jenisDocument($id)
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT * FROM Dokument_jenis WHERE dokument_jenis_id = '$id' ") or die ($db->error);
+    return $query;
+  }
+
+  public function update_jenisDocument($id, $nama)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Dokument_jenis SET dokument_jenis_nama = '$nama' WHERE dokument_jenis_id = '$id' ") or die ($db->error);
+  }
+
+  public function deleteJenisDocument($id)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("DELETE FROM Dokument_jenis WHERE dokument_jenis_id = '$id' ") or die ($db->error);
+  }
+
+
   public function ShowDokument()
   {
     $db = $this->mysqli->conn;

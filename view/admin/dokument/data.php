@@ -9,6 +9,8 @@
       <thead>
         <tr>
           <th>Nama Jenis Dokument</th>
+          <th>Opsi</th>
+
         </tr>
       </thead>
       <tbody>
@@ -18,8 +20,8 @@
         <tr>
           <td><?=$a->dokument_jenis_nama; ?></td>
           <td>
-            <a href="<?=$a->dokument_jenis_id; ?>">Edit</a>
-            <a href="<?=$a->dokument_jenis_id; ?>">Hapus</a>
+            <a href="?view=jenisDokument_edit&id=<?=$a->dokument_jenis_id; ?>">Edit</a>
+            <a href="?view=jenisDokument_hapus&id=<?=$a->dokument_jenis_id; ?>">Hapus</a>
           </td>
         </tr>
     <?php } ?>

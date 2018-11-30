@@ -4,24 +4,51 @@ $data = $objAdmin->editGuru($id);
 $a = $data->fetch_object();
  ?>
 
- <form class="" action="" method="post">
+ <center>
+ <div class="form-input-document">
+     <form class="" action="" method="post">
 
- <input type="number" name="guru_nip" value="<?=$a->guru_nip; ?>" readonly> <br>
- <input type="text" name="guru_nama" value="<?=$a->guru_nama; ?>"> <br>
- <input type="text" name="guru_pekerjaan" value="<?=$a->guru_pekerjaan; ?>" > <br>
- <select class="" name="guru_jekel">
-     <option value="<?=$a->guru_jekel; ?>"><?=$a->guru_jekel; ?></option>
-     <option value="Laki-Laki">Laki-Laki</option>
-     <option value="Perempuan">Perempuan</option>
- </select> <br>
- <input type="text" name="guru_alamat" value="<?=$a->guru_alamat; ?>"> <br>
- <input type="number" name="guru_telp" value="<?=$a->guru_telp; ?>"> <br>
- <input type="text" name="guru_jabatan" value="<?=$a->guru_jabatan; ?>"> <br>
- <input type="text" name="guru_golongan" value="<?=$a->guru_golongan; ?>"> <br>
- <input type="submit" name="update" value="Update">
+       <div class="form-group">
+         <input type="text" name="guru_nip" class="form-control" value="<?=$a->guru_nip; ?>" readonly>
+       </div>
 
- </form>
+       <div class="form-group">
+         <input type="text" name="guru_nama" class="form-control" value="<?=$a->guru_nama; ?>">
+       </div>
 
+       <div class="form-group">
+         <input type="text" name="guru_pekerjaan"  class="form-control" value="<?=$a->guru_pekerjaan; ?>" >
+       </div>
+
+       <div class="form-group">
+           <select class="form-control" id="exampleFormControlSelect1" name="guru_jekel">
+             <option value="<?=$a->guru_jekel; ?>"><?=$a->guru_jekel; ?></option>
+             <option value="Laki-Laki">Laki-Laki</option>
+             <option value="Perempuan">Perempuan</option>
+           </select>
+       </div>
+
+       <div class="form-group">
+         <input type="text" name="guru_alamat" class="form-control" value="<?=$a->guru_alamat; ?>">
+       </div>
+
+       <div class="form-group">
+         <input type="text" name="guru_telp" class="form-control" value="<?=$a->guru_telp; ?>">
+       </div>
+
+       <div class="form-group">
+          <input type="text" name="guru_jabatan" class="form-control" value="<?=$a->guru_jabatan; ?>">
+       </div>
+
+       <div class="form-group">
+         <input type="text" name="guru_golongan" class="form-control" value="<?=$a->guru_golongan; ?>">
+       </div>
+
+       <button type="submit" name="update"  class="btn btn-secondary btn-lg btn-block">Update</button>
+
+     </form>
+</div>
+</center>
  <?php
  if (isset($_POST['update'])) {
      $nip = $_POST['guru_nip'];

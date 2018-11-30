@@ -1,3 +1,9 @@
+<script type="text/javascript">
+    $(document).ready( function () {
+      $('#table').DataTable();
+    } );
+</script>
+
 <form class="" action="" method="post">
   <select class="" name="cari_a">
     <option value="kegiatan_nis">SISWA</option>
@@ -13,7 +19,7 @@ if (isset($_POST['cari'])) {
 
  ?>
 
- <table class="table table-bordered">
+<table class="table table-striped text-center" id="table">   
 <thead>
   <tr>
     <th>Kegiatan Nomor</th>

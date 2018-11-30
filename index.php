@@ -8,7 +8,7 @@ $objAdmin = new Admin($obj);
 
 <html lang="en" dir="ltr">
   <head>
-    
+
     <title></title>
 
     <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -40,7 +40,15 @@ $objAdmin = new Admin($obj);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link text-white" href="?view=home">Home <span class="sr-only">(current)</span></a>
+              <?php if (@$_SESSION['NIP']) { ?>
+                <a class="nav-link text-white" href="?view=guru-home">Home <span class="sr-only">(current)</span></a>
+              <?php } ?>
+              <?php if (@$_SESSION['user']) { ?>
+                <a class="nav-link text-white" href="?view=home">Home <span class="sr-only">(current)</span></a>
+              <?php } ?>
+              <?php if (@$_SESSION['NIS']) { ?>
+                <a class="nav-link text-white" href="?view=siswa-home">Home <span class="sr-only">(current)</span></a>
+              <?php } ?>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link text-white" href="">Profile</a>

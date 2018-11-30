@@ -1,6 +1,7 @@
-<!-- <a href="?view=input-dokument">
+<a href="?view=input-dokument">
   <button type="button" class="btn btn-outline-dark">Tambah Dokument</button>
-</a> -->
+</a>
+
 <table class="table table-border">
   <thead>
     <tr>
@@ -11,7 +12,9 @@
       <th>Jenis</th>
       <th>Status</th>
       <th>Keterangan</th>
+      <?php if (@$_SESSION['user']) { ?>
       <th>Opsi</th>
+      <?php } ?>
     </tr>
   </thead>
   <tbody>
@@ -32,10 +35,12 @@ while ($a = $data->fetch_object()) {
         echo "Tidak Aktif";
       } ?></td>
       <td><?=$a->dokument_ket;?></td>
+      <?php if (@$_SESSION['user']) { ?>
       <td>
         <a href="#">Edit</a>
         <a href="#">Hapus</a>
       </td>
+      <?php } ?>
     </tr>
 <?php } ?>
   </tbody>

@@ -80,8 +80,24 @@ elseif (@$_GET['view'] == 'input-dokument') {
 elseif (@$_GET['view'] == 'input-jenis-kegiatan') {
     include 'view/admin/kegiatan/input-jenis-kegiatan.php';
 }
+elseif (@$_GET['view'] == 'jenisKegiatan_edit') {
+    include 'view/admin/kegiatan/edit-jenis-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'jenisKegiatan_hapus') {
+    $id = $_GET['id'];
+    $objAdmin->deleteJenisKegiatan($id);
+    echo '<script> window.location="?view=jenis-kegiatan"; </script>';
+}
+elseif (@$_GET['view'] == 'jenisDokument_hapus') {
+    $id = $_GET['id'];
+    $objAdmin->deleteJenisDocument($id);
+    echo '<script> window.location="?view=jenis-dokument"; </script>';
+}
 elseif (@$_GET['view'] == 'input-jenis-dokument') {
     include 'view/admin/dokument/input-jenis-dokument.php';
+}
+elseif (@$_GET['view'] == 'jenisDokument_edit') {
+    include 'view/admin/dokument/edit-jenis-dokument.php';
 }
 elseif (@$_GET['view'] == 'data-kegiatan') {
     include 'view/admin/kegiatan/data.php';

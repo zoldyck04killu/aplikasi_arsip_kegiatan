@@ -8,6 +8,8 @@
       <thead>
         <tr>
           <th>Nama Jenis Kegiatan</th>
+          <th>Opsi</th>
+
         </tr>
       </thead>
       <tbody>
@@ -17,8 +19,8 @@
         <tr>
           <td><?=$a->jenis_nama; ?></td>
           <td>
-            <a href="<?=$a->jenis_id; ?>">Edit</a>
-            <a href="<?=$a->jenis_id; ?>">Hapus</a>
+            <a href="?view=jenisKegiatan_edit&id=<?=$a->jenis_id; ?>">Edit</a>
+            <a href="?view=jenisKegiatan_hapus&id=<?=$a->jenis_id; ?>">Hapus</a>
           </td>
         </tr>
     <?php } ?>
