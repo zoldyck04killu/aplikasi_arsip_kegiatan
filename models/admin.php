@@ -206,15 +206,28 @@ class Admin
   }
 
 
-  public function showKegiatan()
+  public function showKegiatan($a)
   {
     $db = $this->mysqli->conn;
     $query = $db->query("SELECT Jenis.jenis_id, Jenis.jenis_nama, Kegiatan.kegiatan_nomor, Kegiatan.kegiatan_tanggal, Kegiatan.kegiatan_id_jenis, Kegiatan.kegiatan_nip, Kegiatan.kegiatan_nama, Kegiatan.kegiatan_alamat, Kegiatan.kegiatan_nis, Kegiatan.kegiatan_status, Kegiatan.kegiatan_keterangan
       FROM Jenis
       INNER JOIN Kegiatan
-      ON Jenis.jenis_id = Kegiatan.kegiatan_id_jenis  ") or die ($db->error);
+      ON Jenis.jenis_id = Kegiatan.kegiatan_id_jenis
+      WHERE $a  ") or die ($db->error);
     return $query;
   }
+
+  public function editKegiatan($id)
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT Jenis.jenis_id, Jenis.jenis_nama, Kegiatan.kegiatan_nomor, Kegiatan.kegiatan_tanggal, Kegiatan.kegiatan_id_jenis, Kegiatan.kegiatan_nip, Kegiatan.kegiatan_nama, Kegiatan.kegiatan_alamat, Kegiatan.kegiatan_nis, Kegiatan.kegiatan_status, Kegiatan.kegiatan_keterangan
+      FROM Jenis
+      INNER JOIN Kegiatan
+      ON Jenis.jenis_id = Kegiatan.kegiatan_id_jenis
+      WHERE kegiatan_nomor = '$id'  ") or die ($db->error);
+    return $query;
+  }
+
 
   public function showKegiatanGuru()
   {

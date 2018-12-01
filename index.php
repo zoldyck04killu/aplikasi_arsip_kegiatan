@@ -6,10 +6,9 @@ $obj = new Connection($host, $user, $pass, $db);
 $objAdmin = new Admin($obj);
 ?>
 
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    
     <title></title>
 
     <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
