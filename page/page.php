@@ -120,6 +120,28 @@ elseif (@$_GET['view'] == 'data-dokument') {
 elseif (@$_GET['view'] == 'cetak-kegiatan') {
     include 'view/admin/kegiatan/cetak.php';
 }
+elseif (@$_GET['view'] == 'edit-document') {
+    include 'view/edit-dokument.php';
+}
+elseif (@$_GET['view'] == 'hapus-document') {
+    $id = $_GET['id'];
+    $objAdmin->hapusDocument($id);
+    echo '<script>
+    alert("berhasil");
+    window.location="?view=data-dokument";
+    </script>';
+}
+elseif (@$_GET['view'] == 'edit-data-kegiatan') {
+    include 'view/admin/kegiatan/edit-kegiatan.php';
+}
+elseif (@$_GET['view'] == 'hapus-data-kegiatan') {
+    $id = $_GET['id'];
+    $objAdmin->hapusKegiatan($id);
+    echo '<script>
+    alert("berhasil");
+    window.location="?view=data-kegiatan";
+    </script>';
+}
 
 
 

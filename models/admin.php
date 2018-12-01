@@ -228,6 +228,18 @@ class Admin
     return $query;
   }
 
+  public function updateKegiatan($no, $tgl, $jenis, $nama, $alamat, $status, $ket)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Kegiatan SET kegiatan_tanggal = '$tgl', kegiatan_id_jenis = '$jenis', kegiatan_nama = '$nama', kegiatan_alamat = '$alamat', kegiatan_status = '$status', kegiatan_keterangan = '$ket' WHERE kegiatan_nomor = '$no' ") or die ($db->error);
+  }
+
+  public function hapusKegiatan($id)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("DELETE FROM Kegiatan WHERE kegiatan_nomor = '$id' ") or die ($db->error);
+  }
+
 
   public function showKegiatanGuru()
   {
@@ -307,6 +319,33 @@ class Admin
     ") or die ($db->errir);
     return $query;
   }
+
+
+  public function editDocument($id)
+  {
+    $db = $this->mysqli->conn;
+    $query = $db->query("SELECT Dokument_jenis.dokument_jenis_id, Dokument_jenis.dokument_jenis_nama, Document.dokument_id, Document.dokument_tgl, Document.dokument_no_perkara, Document.dokument_no_gugatan, Document.dokument_odner, Document.dokument_id_jenis, Document.dokument_status, Document.dokument_ket
+      FROM Dokument_jenis
+      INNER JOIN Document
+      ON Dokument_jenis.dokument_jenis_id = Document.dokument_id_jenis WHERE dokument_id = '$id'
+    ") or die ($db->errir);
+    return $query;
+  }
+
+
+  public function updateDocument($id, $tgl, $perkara, $gugatan, $odner, $jenis, $status, $ket)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("UPDATE Document SET dokument_tgl = '$tgl', dokument_no_perkara = '$perkara', dokument_no_gugatan = '$gugatan', dokument_odner = '$odner', dokument_id_jenis = '$jenis', dokument_status = '$status', dokument_ket = '$ket' WHERE dokument_id = '$id' ") or die ($db->error);
+  }
+
+  public function hapusDocument($id)
+  {
+    $db = $this->mysqli->conn;
+    $db->query("DELETE FROM Document WHERE dokument_id = '$id' ") or die ($db->error);
+  }
+
+
 
 
 } // end class

@@ -19,7 +19,7 @@ if (isset($_POST['cari'])) {
 
  ?>
 
-<table class="table table-striped text-center" id="table">   
+<table class="table table-striped text-center" id="table">
 <thead>
   <tr>
     <th>Kegiatan Nomor</th>
@@ -59,9 +59,9 @@ if (isset($_POST['cari'])) {
     <td><?=$b->kegiatan_keterangan; ?></td>
     <td>
       <div class="btn-group">
-        <a class="btn btn-info" href="#">Edit</a>
+        <a class="btn btn-info" href="?view=edit-data-kegiatan&id=<?=$b->kegiatan_nomor; ?>">Edit</a>
         <a class="btn btn-primary" href="?view=cetak-kegiatan&id=<?=$b->kegiatan_nomor; ?>">Cetak</a>
-        <a class="btn btn-danger" href="#">Hapus</a>
+        <a class="btn btn-danger" href="?view=hapus-data-kegiatan&id=<?=$b->kegiatan_nomor; ?>">Hapus</a>
       </div>
     </td>
   </tr>

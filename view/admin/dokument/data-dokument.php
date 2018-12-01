@@ -2,7 +2,7 @@
   <button type="button" class="btn btn-outline-dark">Tambah Dokument</button>
 </a>
 
-<table class="table table-border">
+<table class="table table-border" id="table">
   <thead>
     <tr>
       <th>Tgl</th>
@@ -37,8 +37,8 @@ while ($a = $data->fetch_object()) {
       <td><?=$a->dokument_ket;?></td>
       <?php if (@$_SESSION['user']) { ?>
       <td>
-        <a href="#">Edit</a>
-        <a href="#">Hapus</a>
+        <a href="?view=edit-document&id=<?=$a->dokument_id; ?>">Edit</a>
+        <a href="?view=hapus-document&id=<?=$a->dokument_id; ?>">Hapus</a>
       </td>
       <?php } ?>
     </tr>
