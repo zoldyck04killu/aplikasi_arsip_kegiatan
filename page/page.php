@@ -123,6 +123,9 @@ elseif (@$_GET['view'] == 'cetak-kegiatan') {
 elseif (@$_GET['view'] == 'edit-document') {
     include 'view/edit-dokument.php';
 }
+elseif (@$_GET['view'] == 'laporan-dokument') {
+    include 'view/admin/dokument/laporan-dokumen.php';
+}
 elseif (@$_GET['view'] == 'hapus-document') {
     $id = $_GET['id'];
     $objAdmin->hapusDocument($id);

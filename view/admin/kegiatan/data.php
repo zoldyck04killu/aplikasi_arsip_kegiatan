@@ -16,7 +16,6 @@
 if (isset($_POST['cari'])) {
     $a = $_POST['cari_a'];
     $data = $objAdmin->showKegiatan($a);
-
  ?>
 
 <table class="table table-striped text-center" id="table">

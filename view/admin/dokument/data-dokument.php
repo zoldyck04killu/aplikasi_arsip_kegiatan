@@ -2,6 +2,10 @@
   <button type="button" class="btn btn-outline-dark">Tambah Dokument</button>
 </a>
 
+<a href="view/admin/dokument/laporan-dokumen.php">
+  <button type="button" class="btn btn-outline-dark">Laporan Dokument</button>
+</a>
+
 <table class="table table-border" id="table">
   <thead>
     <tr>
