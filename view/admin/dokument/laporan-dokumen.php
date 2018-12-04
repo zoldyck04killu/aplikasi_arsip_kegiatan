@@ -10,6 +10,7 @@ $objAdmin = new Admin($obj);
 ob_start();
 define('K_PATH_IMAGES', '../../../assets/image/');
 
+
 // create new PDF document
 $pdf = new TCPDF('L', PDF_UNIT, PDF_PAGE_FORMAT, True, 'UTF-8', false);
 
@@ -19,8 +20,8 @@ $pdf = new TCPDF('L', PDF_UNIT, PDF_PAGE_FORMAT, True, 'UTF-8', false);
 // $pdf->SetSubject('Kwitansi Penjualan');
 
 // header & footer data
-$pdf->SetHeaderData('logo.jpeg', 20, 'Perpustakaan STMIK INDONESIA BANJARMASIN',
-            "Alamat : Jl. Pangeran Hidayatullah (Banua Hanyar) Banjarmasin \nTelp. (0511) 4315530 - 4315531", array(48,89,112), array(48,89,112));
+$pdf->SetHeaderData('logo.jpeg', 20, 'MTS Sultan Suriansyah Banjarmasin ',
+            '', array(48,89,112), array(48,89,112));
 
 // $pdf->SetHeaderData('logo.png', 30, 'BIDAN PRAKTEK MANDIRI (BPM)', PDF_HEADER_STRING);
 $pdf->SetFooterData( array(0, 0, 0), array(0, 0, 0));
